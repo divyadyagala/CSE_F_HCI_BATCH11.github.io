@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <style>
+        .question {
+            color: brown; 
+            background-color: white;
+    </style>
+    <script>
+        function getResult() {
+            var score = 0;
+            var resultDiv = document.getElementById("result");
+            var questions = document.getElementsByClassName("question");
+            var unanswered = false;
+
+            for (var i = 0; i < questions.length; i++) {
+                var ele = questions[i].querySelector('input[type="radio"]:checked');
+                if (ele) {
+                    if (ele.value === "correct") {
+                        score++;
+                    }
+                } else {
+                    unanswered = true;
+                }
+            }
+
+            if (unanswered) {
+                resultDiv.innerHTML = "Please attempt all questions.";
+            } else {
+                resultDiv.innerHTML = "You scored " + score + " out of 10.";
+            }
+        }
+    </script>
+</head>
+<body>
+   <b><center><h1>Welcome to the Quiz</h1></center></b>
+   <b><center><h2>All questions carry equal marks</h2></center></b>
+
+    <div class="question">
+        <b><p>1. Who published Human Developed Index?</p></b>
+        <input type="radio" name="capital1" value="correct"> UNDP<br>
+        <input type="radio" name="capital1" value="incorrect"> NCPD<br>
+        <input type="radio" name="capital1" value="incorrect"> CCPC<br>
+        <input type="radio" name="capital1" value="incorrect"> UPSC<br><br>
+    </div>
+
+    <div class="question">
+        <b><p>2.What is the capital of australia?</p></b>
+        <input type="radio" name="planet1" value="correct">Canberra<br>
+        <input type="radio" name="planet1" value="incorrect">Berlin<br>
+        <input type="radio" name="planet1" value="incorrect">Rome<br>
+        <input type="radio" name="planet1" value="incorrect"> London<br>
+    </div>
+    
+    <div class="question">
+        <b><p>3.What is the largest desert in the world?</p></b>
+        <input type="radio" name="gas1" value="correct">Antarctica Desert <br>
+        <input type="radio" name="gas1" value="incorrect"> Arctic Desert<br>
+        <input type="radio" name="gas1" value="incorrect"> Great Australian<br>
+        <input type="radio" name="gas1" value="incorrect"> Sahara Desert<br><br>
+    </div>
+
+    <div class="question">
+        <b><p>4. Which planet is known as the biggest Planet?</p></b>
+        <input type="radio" name="planet2" value="incorrect"> Earth<br>
+        <input type="radio" name="planet2" value="incorrect"> Venus<br>
+        <input type="radio" name="planet2" value="correct"> Jupiter<br>
+        <input type="radio" name="planet2" value="incorrect"> Mars<br><br>
+    </div>
+
+    <div class="question">
+        <b><p>5. What is the chemical symbol for oxygen?</p></b>
+        <input type="radio" name="chemistry1" value="incorrect"> He<br>
+        <input type="radio" name="chemistry1" value="incorrect"> H2O<br>
+        <input type="radio" name="chemistry1" value="correct"> O2<br>
+        <input type="radio" name="chemistry1" value="incorrect"> CO2<br><br>
+    </div>
+
+    <div class="question">
+        <b><p>6. Who is the author 'One Indian Women'?</p></b>
+        <input type="radio" name="literature1" value="incorrect"> Balwant Gargi<br>
+        <input type="radio" name="literature1" value="correct">chetan<br>
+        <input type="radio" name="literature1" value="incorrect"> William Shakespeare<br>
+        <input type="radio" name="literature1" value="incorrect"> Jane Austen<br><br>
+    </div>
+
+    <div class="question">
+        <b><p>7. Entomology is the science that studies?</p></b>
+        <input type="radio" name="biology1" value="correct"> Insects<br>
+        <input type="radio" name="biology1" value="incorrect"> Behavior of human beings<br>
+        <input type="radio" name="biology1" value="incorrect"> The origin and history of technical and scientific terms<br>
+        <input type="radio" name="biology1" value="incorrect">The formation of rocks<br><br>
+    </div>
+
+    <div class="question">
+        <b><p>8. Who was the second President of the United States?</p></b>
+        <input type="radio" name="history1" value="incorrect"> George Washington<br>
+        <input type="radio" name="history1" value="incorrect"> Thomas Jefferson<br>
+        <input type="radio" name="history1" value="incorrect"> Abraham Lincoln<br>
+        <input type="radio" name="history1" value="correct"> John Adams<br><br>
+    </div>
+
+    <div class="question">
+        <b><p>9. What is the chemical symbol for silver?</p></b>
+        <input type="radio" name="chemistry2" value="correct"> Ag<br>
+        <input type="radio" name="chemistry2" value="incorrect"> Au<br>
+        <input type="radio" name="chemistry2" value="incorrect"> Fe<br>
+        <input type="radio" name="chemistry2" value="incorrect"> Hg<br><br>
+    </div>
+
+    <div class="question">
+        <b><p>10. Who is the CM of telangana?</p></b>
+        <input type="radio" name="literature2" value="correct"> KCR<br>
+        <input type="radio" name="literature2" value="incorrect"> KTR<br>
+        <input type="radio" name="literature2" value="incorrect"> MODI<br>
+        <input type="radio" name="literature2" value="incorrect"> JAGAN<br><br>
+    </div>
+
+
+    <input type="button" value="Submit" onclick="getResult()">
+    <input type="button" value="Cancel">
+
+    <div id="result"></div>
+</body>
+</html>
